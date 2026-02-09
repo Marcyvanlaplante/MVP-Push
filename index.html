@@ -1,263 +1,42 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Senteur du Luxe</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-<style>
-/* ===== Base ===== */
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Montserrat',sans-serif;background-color:#fffefc;color:#1a1a1a;scroll-behavior:smooth;}
-h1,h2,h3{font-family:'Playfair Display',serif;}
-a{text-decoration:none;}
-
-/* ===== Header ===== */
-header{background-color:#000;color:#f1c40f;padding:20px;position:sticky;top:0;z-index:100;}
-header h1{margin-bottom:10px;}
-nav a{color:#f1c40f;margin:0 15px;font-weight:bold;transition:0.3s;}
-nav a:hover{color:#d4ac0d;}
-
-/* ===== Hero ===== */
-.hero{
-  text-align:center;
-  padding:100px 20px;
-  background-image:url('https://images.unsplash.com/photo-1600185365452-5fc6e1a1f590?fit=crop&w=800&h=400');
-  background-size:cover;
-  background-position:center;
-  color:#fff;
-  position:relative;
-  overflow:hidden;
-}
-.hero h1{font-size:40px;margin-bottom:20px;text-shadow:2px 2px 4px rgba(0,0,0,0.5);animation:fadeInDown 1s ease forwards;}
-.hero p{font-size:20px;margin-bottom:30px;text-shadow:1px 1px 3px rgba(0,0,0,0.5);animation:fadeInUp 1s 0.5s ease forwards;}
-.btn{background-color:#f1c40f;color:#000;padding:15px 30px;border-radius:5px;font-weight:bold;transition:0.3s;}
-.btn:hover{background-color:#d4ac0d;}
-
-/* ===== Carousel Machines ===== */
-.carousel{display:flex;overflow-x:auto;scroll-behavior:smooth;gap:20px;padding:20px;}
-.machine{min-width:250px;border:2px solid #f1c40f;border-radius:10px;overflow:hidden;flex-shrink:0;transition: transform 0.3s;}
-.machine img{width:100%;display:block;}
-.machine h3{margin:15px 0;}
-.machine p{padding:0 10px 15px;}
-.machine:hover{transform:scale(1.05);}
-
-/* ===== Steps ===== */
-.steps{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;margin-top:30px;}
-.step{width:250px;background-color:#fff8e1;padding:20px;border-radius:10px;box-shadow:0 4px 6px rgba(0,0,0,0.1);opacity:0;transform:translateY(20px);transition:0.6s;}
-.step.visible{opacity:1;transform:translateY(0);}
-
-/* ===== Location & profits ===== */
-.benefits{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;margin-top:30px;}
-.benefit{width:250px;padding:20px;border-radius:10px;background:#fff8e1;text-align:center;transition:transform 0.3s;}
-.benefit:hover{transform:translateY(-10px);}
-.counter{font-size:48px;font-weight:bold;color:#f1c40f;margin-top:10px;}
-
-/* ===== Parfums saisonniers ===== */
-.seasons{display:flex;overflow-x:auto;gap:20px;padding:20px;}
-.season{min-width:200px;background:#fef5e7;padding:15px;border-radius:10px;box-shadow:0 3px 5px rgba(0,0,0,0.1);flex-shrink:0;}
-
-/* ===== FAQ ===== */
-.faq{max-width:800px;margin:0 auto;text-align:left;}
-.faq h3{cursor:pointer;background-color:#f1c40f;color:#000;padding:15px;margin-bottom:5px;border-radius:5px;}
-.faq p{display:none;padding:10px 15px;background-color:#fff8e1;border-radius:5px 5px 0 0;margin-bottom:15px;}
-
-/* ===== Form ===== */
-form{max-width:500px;margin:0 auto;display:flex;flex-direction:column;gap:15px;}
-input,textarea{padding:10px;border:2px solid #f1c40f;border-radius:5px;font-size:16px;}
-button{border:none;cursor:pointer;}
-
-/* ===== Footer ===== */
-footer{background-color:#000;color:#f1c40f;padding:30px 20px;margin-top:40px;text-align:center;}
-
-/* ===== Chatbot ===== */
-#chatbot{position:fixed;bottom:20px;right:20px;width:300px;height:400px;background:#fff;border:2px solid #f1c40f;border-radius:10px;box-shadow:0 4px 6px rgba(0,0,0,0.2);display:flex;flex-direction:column;overflow:hidden;z-index:999;}
-#chat-header{background:#f1c40f;padding:10px;text-align:center;font-weight:bold;}
-#chat-messages{flex:1;padding:10px;overflow-y:auto;}
-#chat-input{width:calc(100% - 20px);margin:5px;padding:5px;border:1px solid #ccc;border-radius:5px;}
-#chatbot button{width:100%;padding:10px;background:#f1c40f;border:none;font-weight:bold;cursor:pointer;}
-
-/* ===== Responsive ===== */
-@media(max-width:768px){.steps,.benefits{flex-direction:column;align-items:center;}}
-@media(max-width:600px){.carousel,.seasons{flex-direction:column;align-items:center;}}
-/* ===== Animations ===== */
-@keyframes fadeInDown{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
-@keyframes fadeInUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Professional Design</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<header>
-<h1>Senteur du Luxe</h1>
-<nav>
-<a href="#machines">Nos Machines</a>
-<a href="#comment">Comment ça marche</a>
-<a href="#location">Location & Profits</a>
-<a href="#seasons">Parfums</a>
-<a href="#faq">FAQ</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
-
-<div class="hero">
-<h1>Transformez votre espace en expérience unique</h1>
-<p>Louez nos machines gratuitement et gagnez 10–25% de vos ventes</p>
-<a href="#contact" class="btn">Demandez votre machine</a>
-</div>
-
-<section id="machines">
-<h2>Nos Machines</h2>
-<div class="carousel">
-<div class="machine">
-<img src="https://images.unsplash.com/photo-1616627986606-7c5b9e3b61e7?fit=crop&w=300&h=300" alt="Machine Luxe 1">
-<h3>Machine Luxe 1</h3>
-<p>Capacité: 50 sprays | Couleurs: Noir, Or, Rose, Beige, Gris</p>
-<a href="#contact" class="btn">Demandez cette machine</a>
-</div>
-<div class="machine">
-<img src="https://images.unsplash.com/photo-1616627986606-7c5b9e3b61e7?fit=crop&w=300&h=300" alt="Machine Luxe 2">
-<h3>Machine Luxe 2</h3>
-<p>Capacité: 80 sprays | Couleurs: Noir, Or, Rose, Beige, Gris</p>
-<a href="#contact" class="btn">Demandez cette machine</a>
-</div>
-</div>
-</section>
-
-<section id="comment">
-<h2>Comment ça marche</h2>
-<div class="steps">
-<div class="step">
-<h3>1. Louez gratuitement</h3>
-<p>Aucune dépense, nous vous fournissons la machine clé en main.</p>
-</div>
-<div class="step">
-<h3>2. Installation & entretien</h3>
-<p>Installation gratuite et entretien hebdomadaire inclus.</p>
-</div>
-<div class="step">
-<h3>3. Recevez vos revenus</h3>
-<p>Profitez d’un pourcentage des ventes générées (10–25%).</p>
-</div>
-<div class="step">
-<h3>4. Parfums saisonniers</h3>
-<p>Parfums changent à chaque saison, pour surprendre vos clients.</p>
-</div>
-</div>
-</section>
-
-<section id="location">
-<h2>Location & Profits</h2>
-<div class="benefits">
-<div class="benefit">
-<h3>0$ d'achat</h3>
-<p>Machines louées gratuitement, aucun investissement initial.</p>
-</div>
-<div class="benefit">
-<h3>10–25% de revenus</h3>
-<p>Recevez une part des ventes générées par vos clients.</p>
-<div class="counter" data-target="25">0%</div>
-</div>
-<div class="benefit">
-<h3>Installation & entretien</h3>
-<p>Livraison et entretien hebdomadaire inclus.</p>
-</div>
-</div>
-</section>
-
-<section id="seasons">
-<h2>Parfums saisonniers</h2>
-<div class="seasons">
-<div class="season"><h3>Printemps</h3><p>Notes florales et fraîches</p></div>
-<div class="season"><h3>Été</h3><p>Parfums fruités et légers</p></div>
-<div class="season"><h3>Automne</h3><p>Notes boisées et épicées</p></div>
-<div class="season"><h3>Hiver</h3><p>Parfums chauds et intenses</p></div>
-</div>
-</section>
-
-<section id="faq">
-<h2>FAQ</h2>
-<div class="faq">
-<h3>Comment fonctionne la location ?</h3>
-<p>Vous louez gratuitement la machine, nous gérons l’installation et l’entretien. Vous recevez 10–25% des ventes.</p>
-<h3>Puis-je changer les parfums ?</h3>
-<p>Oui, les parfums changent selon les saisons et peuvent être adaptés à votre établissement.</p>
-<h3>Où êtes-vous situés ?</h3>
-<p>Nous desservons la Rive-Sud de Montréal pour tous types d’établissements.</p>
-<h3>Comment se fait le paiement ?</h3>
-<p>Les clients paient via PayPass directement sur la machine.</p>
-</div>
-</section>
-
-<section id="contact">
-<h2>Demande d'installation</h2>
-<form>
-<input type="text" placeholder="Nom" required>
-<input type="email" placeholder="Email" required>
-<input type="tel" placeholder="Téléphone">
-<textarea placeholder="Message / Demande d'installation" rows="5"></textarea>
-<button type="submit" class="btn">Envoyer</button>
-</form>
-</section>
-
-<footer>
-&copy; 2026 Senteur du Luxe – Rive-Sud de Montréal. Tous droits réservés.<br>
-Suivez-nous : [Instagram] [Facebook]
-</footer>
-
-<!-- ===== Chatbot AI 24h/24 ===== -->
-<div id="chatbot">
-<div id="chat-header">Senteur du Luxe AI</div>
-<div id="chat-messages"></div>
-<input id="chat-input" type="text" placeholder="Posez votre question...">
-<button onclick="sendMessage()">Envoyer</button>
-</div>
-
-<script>
-// FAQ toggle
-document.querySelectorAll('.faq h3').forEach(faq=>{
-faq.addEventListener('click',()=>{const p=faq.nextElementSibling;p.style.display=p.style.display==='block'?'none':'block';});
-});
-
-// Steps animation
-const steps=document.querySelectorAll('.step');
-window.addEventListener('scroll',()=>{
-const triggerBottom=window.innerHeight*0.85;
-steps.forEach(step=>{
-if(step.getBoundingClientRect().top<triggerBottom){step.classList.add('visible');}
-});
-});
-
-// Counter animation
-document.querySelectorAll('.counter').forEach(counter=>{
-const updateCount=()=>{
-const target=+counter.getAttribute('data-target');
-const count=+counter.innerText.replace('%','');
-const increment=target/50;
-if(count<target){counter.innerText=Math.ceil(count+increment)+'%';setTimeout(updateCount,30);}
-else{counter.innerText=target+'%';}
-};
-updateCount();
-});
-
-// ===== Chatbot AI simple =====
-function sendMessage(){
-  const input=document.getElementById('chat-input');
-  const msg=input.value;
-  if(!msg) return;
-  const chat=document.getElementById('chat-messages');
-  chat.innerHTML+='<div><b>Vous:</b> '+msg+'</div>';
-  input.value='';
-
-  // Réponse automatique basique (tu peux connecter API ChatGPT ici)
-  let reply='Bonjour ! Merci pour votre message. Nous vous répondrons dans quelques secondes.';
-  if(msg.toLowerCase().includes('profit')) reply='Le profit pour le propriétaire est de 10 à 25% des ventes générées.';
-  if(msg.toLowerCase().includes('location')) reply='La location est gratuite, avec installation et entretien inclus.';
-  if(msg.toLowerCase().includes('parfum')) reply='Les parfums changent selon les saisons pour surprendre vos clients.';
-
-  chat.innerHTML+='<div><b>AI:</b> '+reply+'</div>';
-  chat.scrollTop=chat.scrollHeight;
-}
-</script>
-
+    <header>
+        <h1>Welcome to Our Luxury Service</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We offer the finest luxury services that cater to your every need.</p>
+        </section>
+        <section id="services">
+            <h2>Our Services</h2>
+            <ul>
+                <li>Personalized Consultations</li>
+                <li>Exclusive Experiences</li>
+                <li>24/7 Customer Support</li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email us at <a href="mailto:info@luxuryservice.com">info@luxuryservice.com</a></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Luxury Service. All rights reserved.</p>
+    </footer>
 </body>
 </html>
